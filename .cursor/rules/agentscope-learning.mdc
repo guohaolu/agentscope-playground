@@ -1,0 +1,92 @@
+---
+description: AgentScope 学习项目约定与可学习案例路径（基于官方 doc，配合 ipynb）
+globs: "**/*.ipynb"
+alwaysApply: false
+---
+
+# AgentScope Playground 项目规则
+
+## 项目定位
+
+- 本仓库使用 **Jupyter Notebook (.ipynb)** 学习 AgentScope 框架的各个组件与用法。
+- 文档参考：AgentScope 官方文档 (https://doc.agentscope.io/)。若项目内提供 `doc/llm.txt` 等本地文档，优先参考本地说明。
+
+## 核心概念（Key Concepts）
+
+编写或评审 notebook 时，注意与以下概念对齐：
+
+- **State**：状态管理，`state_dict` / `load_state_dict`，Agent / Memory / Toolkit 等为有状态对象。
+- **Message**：消息为统一数据结构，用于 Agent 间通信、UI 展示、记忆存储及与 LLM API 的媒介。
+- **Tool**：任意可调用对象（函数、方法、偏函数等），支持 async/sync、streaming/non-streaming。
+- **Agent**：`AgentBase` 的 `reply` / `observe` / `print`；ReAct 的 `_reasoning` 与 `_acting`。
+- **Formatter**：将 Message 转为 LLM API 所需格式，支持多身份（multi-agent formatter）等。
+
+## 可学习案例路径（按官方 doc 结构）
+
+按下列顺序在 notebook 中组织学习案例，每个主题对应一个或多个 ipynb。
+
+### 1. Tutorial 入门
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 1.1 | 安装与环境 | quickstart_installation | `01_installation.ipynb` |
+| 1.2 | ReAct Agent | quickstart_agent | `02_react_agent.ipynb` |
+| 1.3 | Message 创建与使用 | quickstart_message | `03_message.ipynb` |
+| 1.4 | 关键概念梳理 | quickstart_key_concept | `04_key_concept.ipynb` |
+
+### 2. Workflow 工作流
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 2.1 | Handoffs 交接 | workflow_handoffs | `05_workflow_handoffs.ipynb` |
+| 2.2 | Routing 路由 | workflow_routing | `06_workflow_routing.ipynb` |
+| 2.3 | Concurrent Agents 并发 | workflow_concurrent_agents | `07_workflow_concurrent.ipynb` |
+| 2.4 | Multi-Agent Debate 多智能体辩论 | workflow_multiagent_debate | `08_workflow_debate.ipynb` |
+| 2.5 | Conversation 对话 | workflow_conversation | `09_workflow_conversation.ipynb` |
+
+### 3. Model and Context 模型与上下文
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 3.1 | Model 配置与使用 | task_model | `10_task_model.ipynb` |
+| 3.2 | Memory 记忆 | task_memory | `11_task_memory.ipynb` |
+| 3.3 | Long-Term Memory 长期记忆 | task_long_term_memory | `12_task_long_term_memory.ipynb` |
+| 3.4 | Token 与上下文长度 | task_token | `13_task_token.ipynb` |
+| 3.5 | Prompt Formatter | task_prompt | `14_task_prompt.ipynb` |
+
+### 4. Tool 工具
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 4.1 | Tool 定义与注册 | task_tool | `15_task_tool.ipynb` |
+| 4.2 | Agent Skill | task_agent_skill | `16_task_agent_skill.ipynb` |
+| 4.3 | MCP | task_mcp | `17_task_mcp.ipynb` |
+
+### 5. Agent 进阶
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 5.1 | Agent 基础与扩展 | task_agent | `18_task_agent.ipynb` |
+| 5.2 | Realtime Agent | task_realtime | `19_task_realtime.ipynb` |
+| 5.3 | A2A Agent | task_a2a | `20_task_a2a.ipynb` |
+| 5.4 | Middleware | task_middleware | `21_task_middleware.ipynb` |
+| 5.5 | Agent Hooks | task_hook | `22_task_hook.ipynb` |
+| 5.6 | State/Session 管理 | task_state | `23_task_state.ipynb` |
+
+### 6. Features 特性
+
+| 序号 | 主题 | 对应 doc | 建议 notebook |
+|------|------|----------|----------------|
+| 6.1 | RAG | task_rag | `24_feature_rag.ipynb` |
+| 6.2 | Pipeline | task_pipeline | `25_feature_pipeline.ipynb` |
+| 6.3 | Plan | task_plan | `26_feature_plan.ipynb` |
+| 6.4 | Tracing | task_tracing | `27_feature_tracing.ipynb` |
+| 6.5 | Evaluation / OpenJudge | task_eval, task_eval_openjudge | `28_feature_eval.ipynb` |
+| 6.6 | Embedding | task_embedding | `29_feature_embedding.ipynb` |
+| 6.7 | Tuner / TTS / Studio 等 | task_tuner, task_tts, task_studio | 按需单独 notebook |
+
+## Notebook 编写约定
+
+- 每个案例 notebook 开头用 Markdown 注明：对应官方 doc 章节、本讲目标、前置知识。
+- 代码单元格需可顺序运行，避免隐式全局状态导致顺序依赖混乱。
+- 涉及 API Key 或本地路径时使用占位符或环境变量，不提交敏感信息。

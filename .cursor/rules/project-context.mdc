@@ -1,0 +1,10 @@
+---
+description: 本仓库为 AgentScope 框架的 ipynb 学习项目
+alwaysApply: true
+---
+
+# 项目上下文
+
+- **agentscope-playground**：使用 Jupyter Notebook (.ipynb) 学习 AgentScope 各组件的示例与练习项目。
+- 学习路径与案例划分见 `.cursor/rules/agentscope-learning.mdc`（在编辑 ipynb 时生效）。
+- 官方文档：https://doc.agentscope.io/ ；若存在 `doc/llm.txt` 等本地文档，请一并参考。
