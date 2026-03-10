@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
+    "agentscope>=1.0.0",
     "jupyterlab>=4.5.5",
     "matplotlib>=3.10.8",
     "pandas>=3.0.1",
