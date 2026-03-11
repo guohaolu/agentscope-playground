@@ -7,4 +7,5 @@ alwaysApply: true
 
 - **agentscope-playground**：使用 Jupyter Notebook (.ipynb) 学习 AgentScope 各组件的示例与练习项目。
 - 学习路径与案例划分见 `.cursor/rules/agentscope-learning.mdc`（在编辑 ipynb 时生效）。
-- 官方文档：https://doc.agentscope.io/ ；若存在 `doc/llm.txt` 等本地文档，请一并参考。
+- **LLM 文档**：请在 Cursor Docs 中添加 `https://java.agentscope.io/llms-full.txt`（参见 `.cursor/docs.md`）。回答与编写代码时优先参考该文档。
+- 官方文档：https://doc.agentscope.io/（Python）、https://java.agentscope.io/（Java）。

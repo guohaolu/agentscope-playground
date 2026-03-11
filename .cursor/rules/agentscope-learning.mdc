@@ -9,7 +9,7 @@ alwaysApply: false
 ## 项目定位
 
 - 本仓库使用 **Jupyter Notebook (.ipynb)** 学习 AgentScope 框架的各个组件与用法。
-- 文档参考：AgentScope 官方文档 (https://doc.agentscope.io/)。若项目内提供 `doc/llm.txt` 等本地文档，优先参考本地说明。
+- **文档参考**：优先使用 Cursor Docs 中的 **llms-full.txt**（URL：`https://java.agentscope.io/llms-full.txt`），另可参考 AgentScope 官方文档 (https://doc.agentscope.io/、https://java.agentscope.io/)。
 
 ## 核心概念（Key Concepts）
 
